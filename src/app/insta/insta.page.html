@@ -1,0 +1,124 @@
+<ion-header mode="ios">
+  <ion-toolbar color="ligth">
+    <ion-buttons slot="start">
+      <ion-button color="dark">
+        <ion-icon slot="icon-only" name="camera-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Instagram</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="dark">
+        <ion-icon slot="icon-only" name="send-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="story-list">
+    <div class="scroll-horizontal">
+      <div class="scroll-item">
+        <ion-avatar class="avatar-md">
+          <img src="https://picsum.photos/id/103/640/480" alt="">
+        </ion-avatar>
+        <div class="item-label text-muted">
+          Tu historia
+        </div>
+      </div>
+      <div class="scroll-item" *ngFor="let user of users">
+        <div class="item-avatar">
+          <ion-avatar class="avatar-md has-update has-status">
+            <img src="https://picsum.photos/640/480/" alt="">
+          </ion-avatar>
+        </div>
+        <div class="item-label">
+          {{user.name}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ion-list>
+    <ion-item *ngFor="let i of [1,2,3,4,5]">
+      <ion-card>
+        <ion-item>
+          <ion-avatar slot="start">
+            <img src="https://picsum.photos/100/100" alt="profile picture">
+          </ion-avatar>
+          <ion-label>
+            <h2>Andres</h2>
+            <p>Hace 2 horas</p>
+          </ion-label>
+          <ion-buttons slot="end">
+            <ion-button>
+              <ion-icon name="ellipsis-horizontal"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-item>
+
+        <ion-card-content>
+          <img src="https://picsum.photos/id/18/640/480" alt="feed image">
+          <p>Un momento inolvidable</p>
+        </ion-card-content>
+
+        <div class="icon-container">
+          <ion-icon name="heart-outline" class="icon"></ion-icon>
+          <ion-icon name="chatbubble-outline" class="icon"></ion-icon>
+          <ion-icon name="send-outline" class="icon"></ion-icon>
+          <ion-icon name="bookmark-outline" class="icon-save"></ion-icon>
+        </div>
+
+        <!-- Sección de Likes -->
+        <ion-text>
+          <p><strong>A luis</strong> y a <strong>otras 120 personas</strong> les ha gustado esto</p>
+        </ion-text>
+
+        <!-- Enlace para ver comentarios -->
+        <ion-text>
+          <p class="comments-link">Ver todos los comentarios</p>
+        </ion-text>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+
+
+
+
+
+  <div class="feed">
+
+
+
+  </div>
+
+</ion-content>
+
+
+<ion-footer>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home">
+      <ion-icon name="home-outline"></ion-icon>
+      <ion-label>Inicio</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="search">
+      <ion-icon name="search-outline"></ion-icon>
+      <ion-label>Buscar</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="add">
+      <ion-icon name="add-circle-outline"></ion-icon>
+      <ion-label>Agregar</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="notifications">
+      <ion-icon name="notifications-outline"></ion-icon>
+      <ion-label>Notificaciones</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="profile">
+      <ion-icon name="person-outline"></ion-icon>
+      <ion-label>Perfil</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-footer>

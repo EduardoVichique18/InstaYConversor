@@ -1,0 +1,45 @@
+.story-list {
+    padding: 16px 0 8px;
+    border-bottom: 1pc solid #dddd;
+
+    .scroll-horizontal {
+        padding-left: 16px;
+        white-space: nowrap;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+
+
+        .scroll-item {
+            position: relative;
+            display: inline-block;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        .item-label {
+            font-size: 13px;
+            margin-top: 8px;
+        }
+
+        .ion-avatar {
+            &.has-update {
+                padding: 2px;
+                border: 2px solid var(--ion-color-danger);
+            }
+        }
+    }
+}
+
+.icon {
+    font-size: 24px; 
+    margin: 0 5px; 
+}
+
+.icon-save {
+    font-size: 24px;
+    position: absolute;
+    right: 0;
+    margin: 0 5px;
+}

@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Conversor de Moneda</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Moneda de origen</ion-label>
+          <ion-select [(ngModel)]="fromCurrency">
+            <ion-select-option *ngFor="let currency of currencies" [value]="currency">
+              {{ currency }}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Moneda de destino</ion-label>
+          <ion-select [(ngModel)]="toCurrency">
+            <ion-select-option *ngFor="let currency of currencies" [value]="currency">
+              {{ currency }}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Cantidad</ion-label>
+          <ion-input type="number" [(ngModel)]="amount"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-button expand="block" (click)="convert()">Convertir</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-card *ngIf="convertedAmount">
+          <ion-card-header>
+            <ion-card-title>Resultado</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            {{ amount }} {{ fromCurrency }} = {{ convertedAmount }} {{ toCurrency }}
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-button expand="block" color="secondary" routerLink="/history">Ver Historial</ion-button>
+</ion-content>
